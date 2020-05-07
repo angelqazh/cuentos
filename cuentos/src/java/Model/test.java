@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author angel
+ * @author angel hr
  */
 public class test {
     
