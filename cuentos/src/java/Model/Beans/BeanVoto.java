@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Controller;
+package Model.Beans;
 
 /**
  *
  * @author angel
  */
-public class test {
+public class BeanVoto {
     
 }

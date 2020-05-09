@@ -1,6 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
-
+    <servlet>
+        <servlet-name>ServletCreate</servlet-name>
+        <servlet-class>Controller.ServletCreate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRead</servlet-name>
+        <servlet-class>Controller.ServletRead</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletUpdate</servlet-name>
+        <servlet-class>Controller.ServletUpdate</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletDelete</servlet-name>
+        <servlet-class>Controller.ServletDelete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ServletCreate</servlet-name>
+        <url-pattern>/ServletCreate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRead</servlet-name>
+        <url-pattern>/ServletRead</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletUpdate</servlet-name>
+        <url-pattern>/ServletUpdate</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletDelete</servlet-name>
+        <url-pattern>/ServletDelete</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

@@ -10,9 +10,9 @@
     <managed-bean>
         <description>bean del login del tipo sesion </description>
         <managed-bean-name>LoginBean</managed-bean-name>
-        <managed-bean-class>Beans.BeanLogin</managed-bean-class>
-        <managed-bean-scope>session</managed-bean-scope>
-    </managed-bean>
+        <managed-bean-class>Model.Beans.BeanLogin</managed-bean-class>
+    
+        <managed-bean-scope>session</managed-bean-scope></managed-bean>
     <navigation-rule>
         <description>Login</description>
         <from-view-id>/index.xhtml</from-view-id>
