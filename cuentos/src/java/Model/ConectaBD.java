@@ -16,7 +16,7 @@ import java.sql.SQLException;
 public class ConectaBD {
 
     private Connection conexion = null;
-    private String database = "videojuegos";
+    private String database = "cuentos";
     private String usuario = "root";
     private String password = "";
     private String url = "jdbc:mysql://localhost/" + database+"?serverTimezone=UTC";

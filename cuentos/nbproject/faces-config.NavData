@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Scene Scope="Project" version="2">
+    <Scope Scope="Faces Configuration Only"/>
+    <Scope Scope="Project">
+        <Node id="Admin/Menu.jsp" x="1150" y="150" zoom="true"/>
+        <Node id="Revisor/Revisar_Cuento.jsp" x="150" y="150" zoom="true"/>
+        <Node id="index.xhtml" x="400" y="150" zoom="true"/>
+        <Node id="Login.jsp" x="400" y="300" zoom="true"/>
+        <Node id="Principal.xhtml" x="150" y="450" zoom="true"/>
+        <Node id="index.html" x="150" y="300" zoom="true"/>
+        <Node id="Admin/Update.jsp" x="900" y="150" zoom="true"/>
+        <Node id="Participante/Crear_Cuento.jsp" x="650" y="150" zoom="true"/>
+        <Node id="Admin/Read.jsp" x="400" y="450" zoom="true"/>
+        <Node id="Admin/Create.jsp" x="650" y="300" zoom="true"/>
+        <Node id="Admin/Delete.jsp" x="150" y="600" zoom="true"/>
+    </Scope>
+    <Scope Scope="All Faces Configurations"/>
+</Scene>
