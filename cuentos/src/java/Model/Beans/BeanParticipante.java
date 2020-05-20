@@ -5,10 +5,68 @@
  */
 package Model.Beans;
 
-/**
- *
- * @author angel
- */
 public class BeanParticipante {
-    
+    private Integer id_participante;
+    private String nombre_participante;
+    private String apellido_participante;
+    private String email_participante;
+    private String biografia_participante; 
+    private String foto_participante;    
+
+    public BeanParticipante(Integer id_participante, String nombre_participante, String apellido_participante, String email_participante, String biografia_participante, String foto_participante) {
+        this.id_participante = id_participante;
+        this.nombre_participante = nombre_participante;
+        this.apellido_participante = apellido_participante;
+        this.email_participante = email_participante;
+        this.biografia_participante = biografia_participante;
+        this.foto_participante = foto_participante;
+    }
+
+    public Integer getId_participante() {
+        return id_participante;
+    }
+
+    public void setId_participante(Integer id_participante) {
+        this.id_participante = id_participante;
+    }
+
+    public String getNombre_participante() {
+        return nombre_participante;
+    }
+
+    public void setNombre_participante(String nombre_participante) {
+        this.nombre_participante = nombre_participante;
+    }
+
+    public String getApellido_participante() {
+        return apellido_participante;
+    }
+
+    public void setApellido_participante(String apellido_participante) {
+        this.apellido_participante = apellido_participante;
+    }
+
+    public String getEmail_participante() {
+        return email_participante;
+    }
+
+    public void setEmail_participante(String email_participante) {
+        this.email_participante = email_participante;
+    }
+
+    public String getBiografia_participante() {
+        return biografia_participante;
+    }
+
+    public void setBiografia_participante(String biografia_participante) {
+        this.biografia_participante = biografia_participante;
+    }
+
+    public String getFoto_participante() {
+        return foto_participante;
+    }
+
+    public void setFoto_participante(String foto_participante) {
+        this.foto_participante = foto_participante;
+    }
 }
