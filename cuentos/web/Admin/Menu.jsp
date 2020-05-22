@@ -88,7 +88,7 @@
                         <h2 class="text-light">Nuevo</h2>
                         <div class="row">
                             <!--*********************PARTICIPANTE***************************************-->
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#form_participante">
                                 <div class="card"  href="#" style="width: 10rem; margin: 10px;">
                                     <img src="../img/participante.png" class="card-img-top text-center" alt="...">
                                     <div class="card-body">
@@ -97,7 +97,7 @@
                                 </div>
                             </a>
                             <!--***************************REVISOR***************************************-->
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#form_revisor">
                                 <div class="card" style="width: 10rem; margin: 10px;">
                                     <img src="../img/revisor.png" class="card-img-top">
                                     <div class="card-body">
@@ -106,7 +106,7 @@
                                 </div>
                             </a>
                             <!--****************************ADMINISTRADOR***********************************-->
-                            <a href="#">
+                            <a href="#" data-toggle="modal" data-target="#form_admin">
                                 <div class="card" style="width: 10rem;margin: 10px;">
                                     <img src="../img/admin.png" class="card-img-top text-center" alt="...">
                                     <div class="card-body">
@@ -122,7 +122,7 @@
                             <div class="row">
                                 <div class="col-2 bg-light">
                                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active font-weight-bold" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Perticipantes</a>
+                                        <a class="nav-link active font-weight-bold" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Participantes</a>
                                         <a class="nav-link font-weight-bold" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Revisores</a>
                                         <a class="nav-link font-weight-bold" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Administradores</a>
                                     </div>
@@ -131,6 +131,15 @@
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <!--**************************Participantes*************************************-->
                                         <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                            </br>
+                                            <div class="row justify-content-center">
+                                                <div class="col-5">
+                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                                </div>
+                                                <div class="col-1">
+                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+                                                </div>
+                                            </div>
                                             </br>
                                             <!--tabla PARTICIPANTE-->
                                             <table class="table table-striped">
@@ -150,13 +159,13 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">1</th>
-                                                        <td>Leonardo</td>
-                                                        <td>Orozco</td>
-                                                        <td>leo@gmail.com</td>
-                                                        <td>...</td>
-                                                        <td>leo.jpg</td>
+                                                        <td id="nombre_p_1">Leonardo</td>
+                                                        <td id="apellido_p_1">Orozco</td>
+                                                        <td id="email_p_1">leo@gmail.com</td>
+                                                        <td id="bio_1">...</td>
+                                                        <td id="foto_1">leo.jpg</td>
                                                         <td>1000</td>
-                                                        <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
+                                                        <td><button value="1" type="button" class="btn btn-outline-warning edit_p">Editar</button></td>
                                                         <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
                                                     </tr>
                                                     <tr>
@@ -176,6 +185,15 @@
                                         <!--**************************Revisores*************************************-->
                                         <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                             </br>
+                                            <div class="row justify-content-center">
+                                                <div class="col-5">
+                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                                </div>
+                                                <div class="col-1">
+                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+                                                </div>
+                                            </div>
+                                            </br>
                                             <table class="table table-striped">
                                                 <thead class="thead-dark">
                                                     <tr>
@@ -193,12 +211,12 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">1</th>
-                                                        <td>leo@gmail.com</td>
-                                                        <td>123</td>
-                                                        <td>Leonardo Orozco Juárez</td>
-                                                        <td>4771234567</td>
+                                                        <td id="email_r_1">leo@gmail.com</td>
+                                                        <td id="password_r_1">123</td>
+                                                        <td id="nombre_r_1">Leonardo Orozco Juárez</td>
+                                                        <td id="telefono_r_1">4771234567</td>
                                                         <td>1000</td>
-                                                        <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
+                                                        <td><button value="1" type="button" class="btn btn-outline-warning edit_r">Editar</button></td>
                                                         <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
                                                     </tr>
                                                     <tr>
@@ -217,6 +235,15 @@
                                         <!--**************************Administradores*************************************-->
                                         <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                             </br>
+                                            <div class="row justify-content-center">
+                                                <div class="col-5">
+                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                                </div>
+                                                <div class="col-1">
+                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+                                                </div>
+                                            </div>
+                                            </br>
                                             <table class="table table-striped">
                                                 <thead class="thead-dark">
                                                     <tr>
@@ -233,11 +260,11 @@
                                                 <tbody>
                                                     <tr>
                                                         <th scope="row">1</th>
-                                                        <td>leo@gmail.com</td>
-                                                        <td>123</td>
-                                                        <td>Leonardo Orozco Juárez</td>
-                                                        <td>4771234567</td>
-                                                        <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
+                                                        <td id="email_a_1">leo@gmail.com</td>
+                                                        <td id="password_a_1">123</td>
+                                                        <td id="nombre_a_1">Leonardo Orozco Juárez</td>
+                                                        <td id="telefono_a_1">4771234567</td>
+                                                        <td><button value="1" type="button" class="btn btn-outline-warning edit_a">Editar</button></td>
                                                         <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
                                                     </tr>
                                                     <tr>
@@ -260,8 +287,131 @@
                 </div>
             </div>
         </div>
+        <!--****************************MODAL REGISTRO ADMINISTRADOR***********************************-->
+        <div class="modal fade" id="form_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel" >Administrador</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="#">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombre_a">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre_a" name="nombre_a" placeholder="Nombre Completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono_a">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono_a" name="telefono_a" placeholder="Teléfono a 10 digítos" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email_a">Email</label>
+                                <input type="email" class="form-control" id="email_a" placeholder="Email" name="email_a" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password_a">Password</label>
+                                <input type="password" class="form-control" id="password_a" placeholder="Password" name="password_a" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--****************************MODAL REGISTRO PARTICIPANTE***********************************-->
+        <div class="modal fade" id="form_participante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content ">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Participante</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="#">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombre_p">Nombre</label>
+                                <input type="text" class="form-control" id="nombre_p" name="nombre_p" placeholder="Nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="apellido_p">Apellido</label>
+                                <input type="text" class="form-control" id="apellido_p" name="apellido_p" placeholder="Apellido" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email_p">Email</label>
+                                <input type="email" class="form-control" id="email_p" placeholder="Email" name="email_p" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password_p">Password</label>
+                                <input type="password" class="form-control" id="password_p" placeholder="Password" name="password_p" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="foto">Fotografía</label>
+                                <input type="file" class="form-control-file" id="foto" name="foto">
+                            </div>
+                            <div class="form-group">
+                                <label for="bio" class="col-form-label">Biografía</label>
+                                <textarea class="form-control" id="bio" name="bio" required></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!--****************************MODAL REGISTRO REVISOR***********************************-->
+        <div class="modal fade" id="form_revisor" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Revisor</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form method="post" action="#">
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nombre_r">Nombre Completo</label>
+                                <input type="text" class="form-control" id="nombre_r" name="nombre_r" placeholder="Nombre Completo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono_r">Teléfono</label>
+                                <input type="tel" class="form-control" id="telefono_r" name="telefono_r" placeholder="Teléfono a 10 digítos" pattern="[0-9]{10}" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email_r">Email</label>
+                                <input type="email" class="form-control" id="email_r" placeholder="Email" name="email_r" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password_r">Password</label>
+                                <input type="password" class="form-control" id="password_r" placeholder="Password" name="password_r" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
         <script src="../bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
         <script src="../bootstrap/js/popper.min.js" type="text/javascript"></script>
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/modal.js"></script>
     </body>
 </html>
