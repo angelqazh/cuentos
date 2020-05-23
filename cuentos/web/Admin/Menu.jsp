@@ -14,12 +14,12 @@
             <!--NAVBAR-->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.html">Inicio</a>
+                    <a class="navbar-brand" href="../index.jsp">Inicio</a>
                     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                     </button>
-                    <table class=" tablet collapse navbar-collapse" id="exCollapsingNavbar">
+                    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"><a href="../index.html" class="nav-link">Cuentos</a></li>
+                            <li class="nav-item"><a href="../lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
                         </ul>
@@ -29,46 +29,42 @@
                                 <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-success dropdown-toggle">Login <span class="caret"></span></button>
                                 <ul class="dropdown-menu dropdown-menu-right mt-2">
                                     <li class="px-3 py-2">
-                                        <form class="form" role="form">
+                                        <% // out.print(session.getAttribute("usuario"));
+                                            if (session.getAttribute("usuario") != null) {
+                                        %>
+                                        <form action="ServletLogout" method="POST" class="form" role="form">
+
                                             <div class="form-group">
-                                                <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                                <button type="submit" class="btn btn-info btn-block">Logout</button>
+                                            </div>
+                                        </form>
+                                        <%
+                                        } else {
+                                        %>
+                                        <form action="ServletLogin" method="POST" class="form" role="form">
+                                            <div class="form-group">
+                                                <input id="emailInput" name="usuario" placeholder="Email" class="form-control form-control-sm" type="text" required="">
                                             </div>
                                             <div class="form-group">
-                                                <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                                <input id="passwordInput" name="password" placeholder="Password" class="form-control form-control-sm" type="text" required="">
                                             </div>
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-info btn-block">Login</button>
                                             </div>
-                                            <div class="form-group text-center">
-                                                <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                            </div>
+
                                         </form>
+                                        <%
+                                            };
+                                        %>
+
                                     </li>
                                 </ul>
                             </li>
                         </ul>
-                    </table>
-                </div>
-            </nav>
-            <!--FIN NAVBAR-->
-            <!--LOGIN-->
-            <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h3>Forgot password</h3>
-                            <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Reset your password..</p>
-                        </div>
-                        <div class="modal-footer">
-                            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                            <button class="btn btn-primary">Save changes</button>
-                        </div>
                     </div>
                 </div>
-            </div>
+            </nav>
+
             <!--FIN LOGIN-->
             <br/>
             <br/>
@@ -156,7 +152,7 @@
                                                         <th scope="col">Eliminar</th>
                                                     </tr>
                                                 </thead>
-                                                
+
                                                 <tbody class="table">
                                                     <tr>
                                                         <th scope="row">1</th>

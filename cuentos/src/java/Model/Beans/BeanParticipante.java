@@ -10,17 +10,29 @@ public class BeanParticipante {
     private String nombre_participante;
     private String apellido_participante;
     private String email_participante;
+    private String password_participante;
     private String biografia_participante; 
     private String foto_participante;    
 
-    public BeanParticipante(Integer id_participante, String nombre_participante, String apellido_participante, String email_participante, String biografia_participante, String foto_participante) {
+    public BeanParticipante(Integer id_participante, String nombre_participante, String apellido_participante, String email_participante, String password_participante, String biografia_participante, String foto_participante) {
         this.id_participante = id_participante;
         this.nombre_participante = nombre_participante;
         this.apellido_participante = apellido_participante;
         this.email_participante = email_participante;
+        this.password_participante = password_participante;
         this.biografia_participante = biografia_participante;
         this.foto_participante = foto_participante;
     }
+
+    public String getPassword_participante() {
+        return password_participante;
+    }
+
+    public void setPassword_participante(String password_participante) {
+        this.password_participante = password_participante;
+    }
+
+  
 
     public Integer getId_participante() {
         return id_participante;

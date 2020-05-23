@@ -1,9 +1,12 @@
+<%-- 
+    Document   : index
+    Created on : 23/05/2020, 01:14:51 PM
+    Author     : Mauricio
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page session="true" %>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Inicio</title>
@@ -16,12 +19,12 @@ and open the template in the editor.
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Inicio</a>
+                <a class="navbar-brand" href="index.jsp">Inicio</a>
                 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 </button>
                 <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"><a href="#" class="nav-link">Cuentos</a></li>
+                        <li class="nav-item"><a href="lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
                     </ul>
@@ -31,20 +34,34 @@ and open the template in the editor.
                             <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-success dropdown-toggle">Login <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right mt-2">
                                 <li class="px-3 py-2">
-                                    <form class="form" role="form">
+                                    <% // out.print(session.getAttribute("usuario"));
+                                        if (session.getAttribute("usuario") != null) {
+                                    %>
+                                    <form action="ServletLogout" method="POST" class="form" role="form">
+
                                         <div class="form-group">
-                                            <input id="emailInput" placeholder="Email" class="form-control form-control-sm" type="text" required="">
+                                            <button type="submit" class="btn btn-info btn-block">Logout</button>
+                                        </div>
+                                    </form>
+                                    <%
+                                    } else {
+                                    %>
+                                    <form action="ServletLogin" method="POST" class="form" role="form">
+                                        <div class="form-group">
+                                            <input id="emailInput" name="usuario" placeholder="Email" class="form-control form-control-sm" type="text" required="">
                                         </div>
                                         <div class="form-group">
-                                            <input id="passwordInput" placeholder="Password" class="form-control form-control-sm" type="text" required="">
+                                            <input id="passwordInput" name="password" placeholder="Password" class="form-control form-control-sm" type="text" required="">
                                         </div>
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-info btn-block">Login</button>
                                         </div>
-                                        <div class="form-group text-center">
-                                            <small><a href="#" data-toggle="modal" data-target="#modalPassword">Forgot password?</a></small>
-                                        </div>
+
                                     </form>
+                                    <%
+                                        };
+                                    %>
+
                                 </li>
                             </ul>
                         </li>
@@ -53,23 +70,7 @@ and open the template in the editor.
             </div>
         </nav>
 
-        <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h3>Forgot password</h3>
-                        <button type="button" class="close font-weight-light" data-dismiss="modal" aria-hidden="true">×</button>
-                    </div>
-                    <div class="modal-body">
-                        <p>Reset your password..</p>
-                    </div>
-                    <div class="modal-footer">
-                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                        <button class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
+     
         <header>
             <h1>Concurso Nacional de Cuentos</h1>
             <p>Te invitamos a conocer los exelentes cuentos de nuestros participantes</p>
@@ -127,7 +128,7 @@ and open the template in the editor.
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                                              alt="Card image cap">
-                                         <div class="card-body">
+                                        <div class="card-body">
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
@@ -140,7 +141,7 @@ and open the template in the editor.
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG"
                                              alt="Card image cap">
-                                         <div class="card-body">
+                                        <div class="card-body">
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
@@ -162,7 +163,7 @@ and open the template in the editor.
 
                                         <img class="card-img-top" src="https://www.pequeocio.com/wp-content/uploads/2009/05/el-patito-feo-1-550x388.jpg"
                                              alt="Card image cap">
-                                         <div class="card-body">
+                                        <div class="card-body">
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
@@ -175,7 +176,7 @@ and open the template in the editor.
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                                              alt="Card image cap">
-                                         <div class="card-body">
+                                        <div class="card-body">
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
@@ -223,7 +224,7 @@ and open the template in the editor.
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                                              alt="Card image cap">
-                                         <div class="card-body">
+                                        <div class="card-body">
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
@@ -236,7 +237,7 @@ and open the template in the editor.
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG"
                                              alt="Card image cap">
-                                         <div class="card-body">
+                                        <div class="card-body">
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
@@ -274,3 +275,4 @@ and open the template in the editor.
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
+
