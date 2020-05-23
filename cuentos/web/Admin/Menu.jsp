@@ -17,7 +17,7 @@
                     <a class="navbar-brand" href="../index.html">Inicio</a>
                     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                     </button>
-                    <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+                    <table class=" tablet collapse navbar-collapse" id="exCollapsingNavbar">
                         <ul class="nav navbar-nav">
                             <li class="nav-item"><a href="../index.html" class="nav-link">Cuentos</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
@@ -47,7 +47,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </table>
                 </div>
             </nav>
             <!--FIN NAVBAR-->
@@ -130,7 +130,7 @@
                                 <div class="col-10 bg-light">
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <!--**************************Participantes*************************************-->
-                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                        <div class="tab-pane fade show active table-responsive" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                             </br>
                                             <div class="row justify-content-center">
                                                 <div class="col-5">
@@ -143,7 +143,7 @@
                                             </br>
                                             <!--tabla PARTICIPANTE-->
                                             <table class="table table-striped">
-                                                <thead class="thead-dark">
+                                                <thead class="table thead-dark">
                                                     <tr>
                                                         <th scope="col">Id</th>
                                                         <th scope="col">Nombre</th>
@@ -156,7 +156,8 @@
                                                         <th scope="col">Eliminar</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                
+                                                <tbody class="table">
                                                     <tr>
                                                         <th scope="row">1</th>
                                                         <td id="nombre_p_1">Leonardo</td>
