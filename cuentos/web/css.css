@@ -34,6 +34,15 @@ header{
     background-color: whitesmoke;
     text-align: center;
 }
+.contenido-principal-about{
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    background-color: whitesmoke;
+    text-align: left;
+    padding-left: 5%;
+    padding-right: 5%;
+}
 /*.img-slide{
     width: 400px;
     height: 200px;
