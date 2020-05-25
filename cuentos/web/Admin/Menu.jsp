@@ -32,7 +32,7 @@
                                         <% // out.print(session.getAttribute("usuario"));
                                             if (session.getAttribute("usuario") != null) {
                                         %>
-                                        <form action="ServletLogout" method="POST" class="form" role="form">
+                                        <form action="../ServletLogout" method="POST" class="form" role="form">
 
                                             <div class="form-group">
                                                 <button type="submit" class="btn btn-info btn-block">Logout</button>
@@ -41,7 +41,7 @@
                                         <%
                                         } else {
                                         %>
-                                        <form action="ServletLogin" method="POST" class="form" role="form">
+                                        <form action="../ServletLogin" method="POST" class="form" role="form">
                                             <div class="form-group">
                                                 <input id="emailInput" name="usuario" placeholder="Email" class="form-control form-control-sm" type="text" required="">
                                             </div>

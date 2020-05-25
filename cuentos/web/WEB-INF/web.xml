@@ -16,6 +16,14 @@
         <servlet-name>ServletDelete</servlet-name>
         <servlet-class>Controller.ServletDelete</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ServletLogin</servlet-name>
+        <servlet-class>Controller.ServletLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletLogout</servlet-name>
+        <servlet-class>Controller.ServletLogout</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletCreate</servlet-name>
         <url-pattern>/ServletCreate</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>ServletDelete</servlet-name>
         <url-pattern>/ServletDelete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletLogin</servlet-name>
+        <url-pattern>/ServletLogin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletLogout</servlet-name>
+        <url-pattern>/ServletLogout</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
