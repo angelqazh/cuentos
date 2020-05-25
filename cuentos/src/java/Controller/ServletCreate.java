@@ -5,6 +5,12 @@
  */
 package Controller;
 
+import Model.Beans.BeanAdmin;
+import Model.Beans.BeanParticipante;
+import Model.Beans.BeanRevisor;
+import Model.Persistencia.Administrador;
+import Model.Persistencia.Participante;
+import Model.Persistencia.Revisor;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -30,17 +36,37 @@ public class ServletCreate extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServletCreate</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServletCreate at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        PrintWriter out = response.getWriter();
+
+        if (request.getParameter("admin") != null) {
+            Administrador admin = new Administrador();
+            BeanAdmin bean = new BeanAdmin(
+                    null,
+                    request.getParameter("email_a"),
+                    request.getParameter("password_a"),
+                    request.getParameter("nombre_a"),
+                    request.getParameter("telefono_a"));
+            admin.insertar(bean);
+        } else if (request.getParameter("participante") != null) {
+            Participante p = new Participante();
+            BeanParticipante bean = new BeanParticipante(
+                    null,
+                    request.getParameter("nombre_p"),
+                    request.getParameter("apellido_p"),
+                    request.getParameter("email_p"),
+                    request.getParameter("bio"),
+                    null,
+                    request.getParameter("password_p"));
+            p.insertar(bean);
+        } else if (request.getParameter("revisor") != null) {
+            Revisor r = new Revisor();
+            BeanRevisor bean = new BeanRevisor(
+                    null,
+                    request.getParameter("email_r"),
+                    request.getParameter("password_r"),
+                    request.getParameter("nombre_r"),
+                    request.getParameter("telefono_r"));
+            r.insertar(bean);
         }
     }
 

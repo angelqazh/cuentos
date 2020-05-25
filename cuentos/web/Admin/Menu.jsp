@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>JSP Page</title>
+        <title>Menu</title>
         <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
         <script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
         <link href="../css.css" rel="stylesheet" type="text/css"/>
@@ -14,12 +14,12 @@
             <!--NAVBAR-->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.html">Inicio</a>
+                    <a class="navbar-brand" href="../index.jsp">Inicio</a>
                     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                     </button>
                     <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                         <ul class="nav navbar-nav">
-                            <li class="nav-item"><a href="../index.html" class="nav-link">Cuentos</a></li>
+                            <li class="nav-item"><a href="../index.jsp" class="nav-link">Cuentos</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
                         </ul>
@@ -134,10 +134,10 @@
                                             </br>
                                             <div class="row justify-content-center">
                                                 <div class="col-5">
-                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                                    <input id="txt_b_p" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
                                                 </div>
                                                 <div class="col-1">
-                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+                                                    <button id="buscar_p" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
                                                 </div>
                                             </div>
                                             </br>
@@ -149,36 +149,14 @@
                                                         <th scope="col">Nombre</th>
                                                         <th scope="col">Apellido</th>
                                                         <th scope="col">Email</th>
+                                                        <th scope="col">Password</th>
                                                         <th scope="col">Biografía</th>
-                                                        <th scope="col">Foto</th>
-                                                        <th scope="col">Id_Admin</th>
                                                         <th scope="col">Editar</th>
                                                         <th scope="col">Eliminar</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td id="nombre_p_1">Leonardo</td>
-                                                        <td id="apellido_p_1">Orozco</td>
-                                                        <td id="email_p_1">leo@gmail.com</td>
-                                                        <td id="bio_1">...</td>
-                                                        <td id="foto_1">leo.jpg</td>
-                                                        <td>1000</td>
-                                                        <td><button value="1" type="button" class="btn btn-outline-warning edit_p">Editar</button></td>
-                                                        <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Angél</td>
-                                                        <td>Saldaña</td>
-                                                        <td>shabo@gmail.com</td>
-                                                        <td>...</td>
-                                                        <td>shabo.jpg</td>
-                                                        <td>1000</td>
-                                                        <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
-                                                        <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                                                    </tr>
+                                                <tbody id="body_p">
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -187,10 +165,10 @@
                                             </br>
                                             <div class="row justify-content-center">
                                                 <div class="col-5">
-                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                                    <input id="txt_b_r" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
                                                 </div>
                                                 <div class="col-1">
-                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+                                                    <button id="buscar_r" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
                                                 </div>
                                             </div>
                                             </br>
@@ -202,33 +180,13 @@
                                                         <th scope="col">Password</th>
                                                         <th scope="col">Nombre</th>
                                                         <th scope="col">Teléfono</th>
-                                                        <th scope="col">Id_Admin</th>
                                                         <th scope="col">Editar</th>
                                                         <th scope="col">Eliminar</th>
                                                     </tr>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td id="email_r_1">leo@gmail.com</td>
-                                                        <td id="password_r_1">123</td>
-                                                        <td id="nombre_r_1">Leonardo Orozco Juárez</td>
-                                                        <td id="telefono_r_1">4771234567</td>
-                                                        <td>1000</td>
-                                                        <td><button value="1" type="button" class="btn btn-outline-warning edit_r">Editar</button></td>
-                                                        <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>shabo@gmail.com</td>
-                                                        <td>123</td>
-                                                        <td>Angél Saldaña Navarro</td>
-                                                        <td>4771234567</td>
-                                                        <td>1000</td>
-                                                        <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
-                                                        <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                                                    </tr>
+                                                <tbody id="body_r">
+                                                    
                                                 </tbody>
                                             </table>
                                         </div>
@@ -237,10 +195,10 @@
                                             </br>
                                             <div class="row justify-content-center">
                                                 <div class="col-5">
-                                                    <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+                                                    <input id="txt_b_a" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
                                                 </div>
                                                 <div class="col-1">
-                                                    <button class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
+                                                    <button id="buscar_a" class="btn btn-outline-success my-2 my-sm-0" type="button">Buscar</button>
                                                 </div>
                                             </div>
                                             </br>
@@ -257,25 +215,8 @@
                                                     </tr>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td id="email_a_1">leo@gmail.com</td>
-                                                        <td id="password_a_1">123</td>
-                                                        <td id="nombre_a_1">Leonardo Orozco Juárez</td>
-                                                        <td id="telefono_a_1">4771234567</td>
-                                                        <td><button value="1" type="button" class="btn btn-outline-warning edit_a">Editar</button></td>
-                                                        <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>shabo@gmail.com</td>
-                                                        <td>123</td>
-                                                        <td>Angél Saldaña Navarro</td>
-                                                        <td>4771234567</td>
-                                                        <td><button type="button" class="btn btn-outline-warning">Editar</button></td>
-                                                        <td><button type="button" class="btn btn-outline-danger">Eliminar</button></td>
-                                                    </tr>
+                                                <tbody id="body_a">
+                                                 
                                                 </tbody>
                                             </table>
                                         </div>
@@ -297,7 +238,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form method="post" action="#">
+                    <form>
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="nombre_a">Nombre Completo</label>
@@ -318,7 +259,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button id="insertar_a" type="button" class="btn btn-primary">Insertar</button>
+                            <button id="editar_a" type="button" class="btn btn-primary">Editar</button>
                         </div>
                     </form>
                 </div>
@@ -335,7 +277,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form method="post" action="#">
+                    <form>
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="nombre_p">Nombre</label>
@@ -364,7 +306,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button id="insertar_p" type="button" class="btn btn-primary">Insertar</button>
+                            <button id="editar_p" type="button" class="btn btn-primary">Editar</button>
                         </div>
                     </form>
                 </div>
@@ -381,7 +324,7 @@
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <form method="post" action="#">
+                    <form>
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="nombre_r">Nombre Completo</label>
@@ -402,7 +345,8 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button id="insertar_r" type="button" class="btn btn-primary">Insertar</button>
+                            <button id="editar_r" type="button" class="btn btn-primary">Editar</button>
                         </div>
                     </form>
                 </div>
@@ -410,8 +354,14 @@
         </div>
 
         <script src="../bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/jquery-3.4.1.js" type="text/javascript"></script>
         <script src="../bootstrap/js/popper.min.js" type="text/javascript"></script>
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../js/insertar.js"></script>
+        <script src="../js/lista.js"></script>
         <script src="../js/modal.js"></script>
+        <script src="../js/editar.js"></script>
+        <script src="../js/eliminar.js"></script>
+    
     </body>
 </html>

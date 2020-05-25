@@ -1,9 +1,11 @@
+<%-- 
+    Document   : index
+    Created on : 23 may 2020, 2:54:12
+    Author     : angel
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <title>Inicio</title>
@@ -19,7 +21,7 @@ and open the template in the editor.
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="index.html">Inicio</a>
+                <a class="navbar-brand" href="index.jsp">Inicio</a>
                 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 </button>
                 <div class="collapse navbar-collapse" id="exCollapsingNavbar">
@@ -29,6 +31,9 @@ and open the template in the editor.
 
                     </ul>
                     <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+                        <div scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="rounded"
+                             data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>
+                       
                         <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
                         <li class="dropdown order-1">
                             <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-success dropdown-toggle">Login <span class="caret"></span></button>
@@ -121,7 +126,7 @@ and open the template in the editor.
                                             <h4 class="card-title">Cuento title</h4>
                                             <p class="card-text">Participante: Nombre Participante.</p>
                                             <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a onclick="checkLoginState()" class="btn btn-primary">Votar</a>
+                                            <a onclick="like()" class="btn btn-primary">Votar</a>
                                         </div>
                                     </div>
                                 </div>
