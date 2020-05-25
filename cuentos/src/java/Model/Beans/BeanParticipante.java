@@ -20,10 +20,21 @@ public class BeanParticipante {
         this.nombre_participante = nombre_participante;
         this.apellido_participante = apellido_participante;
         this.email_participante = email_participante;
+        this.pass_participante = pass_participante;
         this.biografia_participante = biografia_participante;
         this.foto_participante = foto_participante;
         this.pass_participante = pass_participante;
     }
+
+    public String getPassword_participante() {
+        return pass_participante;
+    }
+
+    public void setPassword_participante(String password_participante) {
+        this.pass_participante = password_participante;
+    }
+
+  
 
     public Integer getId_participante() {
         return id_participante;
