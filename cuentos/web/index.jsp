@@ -29,7 +29,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"><a href="#" class="nav-link">Cuentos</a></li>
+                        <li class="nav-item"><a href="lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
                     </ul>

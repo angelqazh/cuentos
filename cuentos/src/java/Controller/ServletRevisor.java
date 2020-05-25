@@ -5,8 +5,8 @@
  */
 package Controller;
 
-import Model.Beans.BeanUsuario;
-import Model.UsuarioBD;
+import Model.Beans.BeanCuento;
+import Model.Persistencia.Cuento;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
@@ -14,13 +14,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Mauricio
  */
-public class ServletLogin extends HttpServlet {
+public class ServletRevisor extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,30 +32,14 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        Cuento cbd = new Cuento();
+        BeanCuento c = cbd.buscar(Integer.parseInt(request.getParameter("cuento")));
+        request.setAttribute("cuento", c.getLink_cuento());
 
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");
-        HttpSession session = request.getSession(true);
-        UsuarioBD ubd = new UsuarioBD();
-        BeanUsuario u = new BeanUsuario();
-        u = ubd.buscar(usuario, password);
-
-        session.setAttribute("usuario", usuario);
-        session.setAttribute("tipo", u.getTipo());
-
-        System.out.println(u.getUsuario());
-        System.out.println(u.getTipo());
-
-        if (u.getTipo().equals("administrador")) {
-            response.sendRedirect("Admin/Menu.jsp");
-        } else if (u.getTipo().equals("participante")) {
-            response.sendRedirect("Participante/Crear_Cuento.jsp");
-        } else if (u.getTipo().equals("revisor")) {
-            response.sendRedirect("Revisor/Revisor.jsp");
-        } else {
-            response.sendRedirect("lista_cuentos.jsp");
-
-        }
+        System.out.println(request.getContextPath());
+        RequestDispatcher dispatcher
+                = request.getRequestDispatcher("Revisor/Revisar_Cuento.jsp");
+        dispatcher.forward(request, response);
 
     }
 

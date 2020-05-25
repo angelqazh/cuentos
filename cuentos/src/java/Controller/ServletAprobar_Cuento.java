@@ -5,22 +5,20 @@
  */
 package Controller;
 
-import Model.Beans.BeanUsuario;
-import Model.UsuarioBD;
+import Model.Beans.BeanCuento;
+import Model.Persistencia.Cuento;
 import java.io.IOException;
 import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author Mauricio
  */
-public class ServletLogin extends HttpServlet {
+public class ServletAprobar_Cuento extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,31 +31,20 @@ public class ServletLogin extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        BeanCuento c = (BeanCuento) request.getAttribute("cuento");
+        Cuento bd = new Cuento();
 
-        String usuario = request.getParameter("usuario");
-        String password = request.getParameter("password");
-        HttpSession session = request.getSession(true);
-        UsuarioBD ubd = new UsuarioBD();
-        BeanUsuario u = new BeanUsuario();
-        u = ubd.buscar(usuario, password);
-
-        session.setAttribute("usuario", usuario);
-        session.setAttribute("tipo", u.getTipo());
-
-        System.out.println(u.getUsuario());
-        System.out.println(u.getTipo());
-
-        if (u.getTipo().equals("administrador")) {
-            response.sendRedirect("Admin/Menu.jsp");
-        } else if (u.getTipo().equals("participante")) {
-            response.sendRedirect("Participante/Crear_Cuento.jsp");
-        } else if (u.getTipo().equals("revisor")) {
+        if (request.getParameter("aprobar").equals("aprobar")) {
+            System.out.println("se aprobo el cuento");
+            bd.aprobar(c);
             response.sendRedirect("Revisor/Revisor.jsp");
-        } else {
-            response.sendRedirect("lista_cuentos.jsp");
 
-        }
+        } else if (request.getParameter("aprobar").equals("eliminar")) {
+            System.out.println("NO se aprobo el cuento");
+            bd.borrar(c);
+            response.sendRedirect("Revisor/Revisor.jsp");
 
+        } 
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

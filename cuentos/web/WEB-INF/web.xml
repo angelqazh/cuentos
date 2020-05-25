@@ -24,6 +24,18 @@
         <servlet-name>ServletLogout</servlet-name>
         <servlet-class>Controller.ServletLogout</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>NewServlet</servlet-name>
+        <servlet-class>NewServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletAprobar_Cuento</servlet-name>
+        <servlet-class>Controller.ServletAprobar_Cuento</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ServletRevisor</servlet-name>
+        <servlet-class>Controller.ServletRevisor</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ServletCreate</servlet-name>
         <url-pattern>/ServletCreate</url-pattern>
@@ -47,6 +59,18 @@
     <servlet-mapping>
         <servlet-name>ServletLogout</servlet-name>
         <url-pattern>/ServletLogout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewServlet</servlet-name>
+        <url-pattern>/NewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletAprobar_Cuento</servlet-name>
+        <url-pattern>/ServletAprobar_Cuento</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ServletRevisor</servlet-name>
+        <url-pattern>/ServletRevisor</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

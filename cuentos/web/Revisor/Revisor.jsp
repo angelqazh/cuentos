@@ -1,17 +1,20 @@
 <%-- 
-    Document   : lista_cuentos
-    Created on : 23/05/2020, 12:35:32 PM
+    Document   : Revisor
+    Created on : 25/05/2020, 03:01:34 PM
     Author     : Mauricio
 --%>
 
+<%@page import="Model.Beans.BeanCuento"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Persistencia.Cuento"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
 <!DOCTYPE html>
 <html>
     <head>
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
-        <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
-        <link href="css.css" rel="stylesheet" type="text/css"/>
+        <link href="../bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <script src="../bootstrap/js/bootstrap.js" type="text/javascript"></script>
+        <link href="../css.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script async defer crossorigin="anonymous"
@@ -76,47 +79,41 @@
                 </div>
             </div>
         </nav>
-        <div class="container" style="margin-top: 10px;">
-            <div class="row">
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
-                             alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title">Cuento title</h4>
-                            <p class="card-text">Participante: Nombre Participante.</p>
-                            <p class="card-text">Fecha: 10/10/2020.</p>
-                            <a class="btn btn-primary">Votar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
-                             alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title">Cuento title</h4>
-                            <p class="card-text">Participante: Nombre Participante.</p>
-                            <p class="card-text">Fecha: 10/10/2020.</p>
-                            <a class="btn btn-primary">Votar</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
-                             alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title">Cuento title</h4>
-                            <p class="card-text">Participante: Nombre Participante.</p>
-                            <p class="card-text">Fecha: 10/10/2020.</p>
-                            <a class="btn btn-primary">Votar</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
+        <form action="../ServletRevisor" method="POST">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Link</th>
+                        <th scope="col">Revisar</th>
+                    </tr>
+                    </tr>
+                </thead>
+                <tbody>
+                    <%
+                        Cuento c = new Cuento();
+                        ArrayList<BeanCuento> l = c.lista();
+                        for (BeanCuento cuento : l) {
+                            
+                    %>
+                <input type="hidden"  name="cuento" value="<%= cuento.getId_cuento()%>"></input>
+                    <tr>
+                        <td><%= cuento.getId_cuento()%></td>                              
+                        <td><%= cuento.getNombre_cuento()%></td>                              
+                        <td><%= cuento.getGenero_cuento()%></td>                              
+                        <td><%= cuento.getLink_cuento()%></td>                              
+                        <td><input type="submit" value="revisar"></td>                              
+                    </tr>
+                    <%
+                        }
+                    %>
+
+                </tbody>
+            </table>
+        </form>
         <script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

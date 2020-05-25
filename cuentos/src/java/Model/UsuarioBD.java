@@ -1,5 +1,3 @@
-
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -24,7 +22,7 @@ public class UsuarioBD {
 
     public BeanUsuario buscar(String usuario, String contraseña) {
         BeanUsuario u = new BeanUsuario();
-
+        System.out.println(usuario+" - "+contraseña);
         try {
             ConectaBD conectaBD = new ConectaBD();
             conexion = conectaBD.getConexion();
@@ -84,6 +82,9 @@ public class UsuarioBD {
                 return u;
             }
         } catch (Exception e) {
+            u.setTipo("");
+            u.setUsuario("");
+            u.setContraseña("");
             System.out.println("Error en la base de datos.");
             e.printStackTrace();
             return u;

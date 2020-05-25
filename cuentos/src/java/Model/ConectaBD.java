@@ -18,7 +18,7 @@ public class ConectaBD {
     private Connection conexion = null;
     private String database = "cuentos";
     private String usuario = "root";
-    private String password = "";
+    private String password = "root";
     private String url = "jdbc:mysql://localhost/" + database+"?serverTimezone=UTC";
 
     public ConectaBD() {

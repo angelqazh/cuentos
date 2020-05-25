@@ -22,6 +22,9 @@ public class BeanCuento {
         this.imagen_cuento = imagen_cuento;
     }
 
+    public BeanCuento() {
+    }
+
     public Integer getId_cuento() {
         return id_cuento;
     }
