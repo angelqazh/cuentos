@@ -54,7 +54,7 @@ public class ServletLogin extends HttpServlet {
         } else if (u.getTipo().equals("revisor")) {
             response.sendRedirect("Revisor/Revisor.jsp");
         } else {
-            response.sendRedirect("lista_cuentos.jsp");
+            response.sendRedirect("index.jsp");
 
         }
 

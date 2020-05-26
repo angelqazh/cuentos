@@ -26,12 +26,12 @@
         <h1 style="padding-top: 10vh;text-align: center">Lista de Cuentos</h1>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
             <div class="container">
-                <a class="navbar-brand" href="index.jsp">Inicio</a>
+                <a class="navbar-brand" href="../index.jsp">Inicio</a>
                 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 </button>
                 <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item"><a href="lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
+                        <li class="nav-item"><a href="../lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
                     </ul>
@@ -47,7 +47,7 @@
                                     <% // out.print(session.getAttribute("usuario"));
                                         if (session.getAttribute("usuario") != null) {
                                     %>
-                                    <form action="ServletLogout" method="POST" class="form" role="form">
+                                    <form action="../ServletLogout" method="POST" class="form" role="form">
 
                                         <div class="form-group">
                                             <button type="submit" class="btn btn-info btn-block">Logout</button>
@@ -56,7 +56,7 @@
                                     <%
                                     } else {
                                     %>
-                                    <form action="ServletLogin" method="POST" class="form" role="form">
+                                    <form action="../ServletLogin" method="POST" class="form" role="form">
                                         <div class="form-group">
                                             <input id="emailInput" name="usuario" placeholder="Email" class="form-control form-control-sm" type="text" required="">
                                         </div>
@@ -114,8 +114,8 @@
                 </tbody>
             </table>
         </form>
-        <script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/popper.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
