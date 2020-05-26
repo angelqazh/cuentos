@@ -40,6 +40,8 @@ public class ServletAprobar_Cuento extends HttpServlet {
             bd.aprobar(c);
             response.sendRedirect("Revisor/Revisor.jsp");
 
+            
+            
         } else if (request.getParameter("aprobar").equals("eliminar")) {
             System.out.println("NO se aprobo el cuento");
             bd.borrar(c);
