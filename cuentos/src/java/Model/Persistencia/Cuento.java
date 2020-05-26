@@ -82,6 +82,7 @@ public class Cuento {
                     c.setGenero_cuento(rs.getString("genero"));
                     c.setImagen_cuento(rs.getString("imagen"));
                     c.setLink_cuento(rs.getString("link"));
+                    c.setLink_img(rs.getString("link_img"));
 
                     lista.add(c);
                 } while (rs.next());
@@ -117,6 +118,7 @@ public class Cuento {
                 cuento.setGenero_cuento(rs.getString("genero"));
                 cuento.setImagen_cuento(rs.getString("imagen"));
                 cuento.setLink_cuento(rs.getString("link"));
+                cuento.setLink_img(rs.getString("link_img"));
                 conexion.close();
                 return cuento;
 

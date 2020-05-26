@@ -79,7 +79,10 @@
                 </div>
             </div>
         </nav>
-
+<script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        
         <div id="modalPassword" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -132,11 +135,11 @@
 
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
- <%
+                        <%
                             Cuento c = new Cuento();
-                            ArrayList<BeanCuento> l = c.lista2();
+                            ArrayList<BeanCuento> l = c.lista();
                             System.out.println(l.size());
-                            for (int i=0;i<3;i++) {
+                            for (int i = 0; i < 3; i++) {
                                 System.out.println(l.get(i).getNombre_cuento());
                         %>
                         <!--First slide-->
@@ -145,7 +148,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="card mb-2">
-                                        <img class="card-img-top" src="https://www.pequeocio.com/wp-content/uploads/2009/05/el-patito-feo-1-550x388.jpg"
+                                        <img class="card-img-top" src="<%= l.get(i).getLink_img()%>"
                                              alt="Card image cap">
                                         <div class="card-body">
                                             <h4 class="card-title"><%= l.get(i).getNombre_cuento()%></h4>
@@ -158,12 +161,12 @@
 
                                 <div class="col-md-4 clearfix d-none d-md-block">
                                     <div class="card mb-2">
-                                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
+                                        <img class="card-img-top" src="<%= l.get(i+1).getLink_img()%>"
                                              alt="Card image cap">
-                                          <div class="card-body">
-                                            <h4 class="card-title"><%= l.get(i+1).getNombre_cuento()%></h4>
-                                            <p class="card-text">Genero: <%= l.get(i+1).getGenero_cuento()%></p>
-                                            <p class="card-text"><a href="/<%= l.get(i+1).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                                        <div class="card-body">
+                                            <h4 class="card-title"><%= l.get(i + 1).getNombre_cuento()%></h4>
+                                            <p class="card-text">Genero: <%= l.get(i + 1).getGenero_cuento()%></p>
+                                            <p class="card-text"><a href="/<%= l.get(i + 1).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
                                             <a onclick="like()" class="btn btn-primary">Votar</a>
                                         </div>
                                     </div>
@@ -171,12 +174,12 @@
 
                                 <div class="col-md-4 clearfix d-none d-md-block">
                                     <div class="card mb-2">
-                                        <img class="card-img-top" src="https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG"
+                                        <img class="card-img-top" src="<%= l.get(i+2).getLink_img()%>"
                                              alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title"><%= l.get(i+2).getNombre_cuento()%></h4>
-                                            <p class="card-text">Genero: <%= l.get(i+2).getGenero_cuento()%></p>
-                                            <p class="card-text"><a href="/<%= l.get(i+2).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                                            <h4 class="card-title"><%= l.get(i + 2).getNombre_cuento()%></h4>
+                                            <p class="card-text">Genero: <%= l.get(i + 2).getGenero_cuento()%></p>
+                                            <p class="card-text"><a href="/<%= l.get(i + 2).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
                                             <a onclick="like()" class="btn btn-primary">Votar</a>
                                         </div>
                                     </div>
@@ -185,11 +188,11 @@
 
                         </div>
                         <!--/.First slide-->
-   <%
-                    }
-                %>
-                
-               
+                        <%
+                            }
+                        %>
+
+
 
                     </div>
                     <!--/.Slides-->
@@ -211,8 +214,5 @@
             </div>
         </footer>
 
-        <script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>

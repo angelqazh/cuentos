@@ -83,14 +83,15 @@
             Cuento c = new Cuento();
             ArrayList<BeanCuento> l = c.lista();
             System.out.println(l.size());
-            for (int i = 0; i < l.size()/3; i++) {
-                System.out.println(l.get(i).getNombre_cuento());
+            for (int i = 0; i < l.size(); i=i+3) {
+                if(l.size()-i>3){
+                System.out.println(i);
         %>
         <div class="container" style="margin-top: 10px;">
             <div class="row">
                 <div class="col-sm">
                     <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
+                        <img class="card-img-top" src="<%= l.get(i).getLink_img()%>"
                              alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title"><%= l.get(i).getNombre_cuento()%></h4>
@@ -102,7 +103,7 @@
                 </div>
                 <div class="col-sm">
                     <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
+                        <img class="card-img-top" src="<%= l.get(i + 1).getLink_img()%>"
                              alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title"><%= l.get(i + 1).getNombre_cuento()%></h4>
@@ -114,7 +115,7 @@
                 </div>
                 <div class="col-sm">
                     <div class="card">
-                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
+                        <img class="card-img-top" src="<%= l.get(i + 2).getLink_img()%>"
                              alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title"><%= l.get(i + 2).getNombre_cuento()%></h4>
@@ -127,7 +128,7 @@
             </div>
         </div>
         <%
-            }
+            } }
         %>
         <script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>

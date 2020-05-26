@@ -12,17 +12,27 @@ public class BeanCuento {
     private String link_cuento;
     private String contenido_cuento; 
     private String imagen_cuento;
+    private String link_img;
 
-    public BeanCuento(Integer id_cuento, String nombre_cuento, String genero_cuento, String link_cuento, String contenido_cuento, String imagen_cuento) {
+    public BeanCuento(Integer id_cuento, String nombre_cuento, String genero_cuento, String link_cuento, String contenido_cuento, String imagen_cuento,String link_img) {
         this.id_cuento = id_cuento;
         this.nombre_cuento = nombre_cuento;
         this.genero_cuento = genero_cuento;
         this.link_cuento = link_cuento;
         this.contenido_cuento = contenido_cuento;
         this.imagen_cuento = imagen_cuento;
+        this.link_img = link_img;
     }
 
     public BeanCuento() {
+    }
+
+    public String getLink_img() {
+        return link_img;
+    }
+
+    public void setLink_img(String link_img) {
+        this.link_img = link_img;
     }
 
     public Integer getId_cuento() {
