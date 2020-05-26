@@ -25,7 +25,7 @@
                 <div class="collapse navbar-collapse" id="exCollapsingNavbar">
                     <ul class="nav navbar-nav">
                         <li class="nav-item"><a href="lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
-                        <li class="nav-item"><a href="about.jsp" class="nav-link">Condiciones de uso</a></li>
+                        <li class="nav-item"><a href="about.jsp" class="nav-link">Acerca</a></li>
 
                     </ul>
                     <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
@@ -78,8 +78,8 @@
         <div class="contenido-principal-about">
              <p> 
             <!--<p style = "font-family:Comic Sans MS, cursive, sans-serif">--> 
-            <font size = "8">Condiciones de uso:</font><br>
-            <font size = "5" >
+            <font size = "7">Condiciones de uso:</font><br>
+            <font size = "4" >
             <font style="color: #82c3d1;">Condiciones de uso de los contenidos</font><br>
             
 

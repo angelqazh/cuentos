@@ -14,7 +14,7 @@
             <!--NAVBAR-->
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
                 <div class="container">
-                    <a class="navbar-brand" href="../index.jsp">Inicio</a>
+<!--                    <a class="navbar-brand" href="../index.jsp">Inicio</a>
                     <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                     </button>
                     <div class="collapse navbar-collapse" id="exCollapsingNavbar">
@@ -22,7 +22,7 @@
                             <li class="nav-item"><a href="../lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
                             <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
-                        </ul>
+                        </ul>-->
                         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                             <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
                             <li class="dropdown order-1">
@@ -126,7 +126,7 @@
                                 <div class="col-10 bg-light">
                                     <div class="tab-content" id="v-pills-tabContent">
                                         <!--**************************Participantes*************************************-->
-                                        <div class="tab-pane fade show active table-responsive" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                        <div class="tab-pane fade show active " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                                             </br>
                                             <div class="row justify-content-center">
                                                 <div class="col-5">
@@ -291,10 +291,10 @@
                                 <label for="password_p">Password</label>
                                 <input type="password" class="form-control" id="password_p" placeholder="Password" name="password_p" required>
                             </div>
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <label for="foto">Fotografía</label>
                                 <input type="file" class="form-control-file" id="foto" name="foto">
-                            </div>
+                            </div>-->
                             <div class="form-group">
                                 <label for="bio" class="col-form-label">Biografía</label>
                                 <textarea class="form-control" id="bio" name="bio" required></textarea>
