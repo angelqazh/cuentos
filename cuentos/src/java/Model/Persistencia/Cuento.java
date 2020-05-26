@@ -23,6 +23,43 @@ public class Cuento {
     private ResultSet rs;
     private int resultUpdate = 0;
 
+    public ArrayList<BeanCuento> lista2() {
+        int cont = 0;
+        ArrayList<BeanCuento> lista = new ArrayList<BeanCuento>();
+        BeanCuento c;
+        try {
+            ConectaBD conectaBD = new ConectaBD();
+            conexion = conectaBD.getConexion();
+            stm = conexion.createStatement();
+            rs = stm.executeQuery("select * from cuento");
+            if (!rs.next()) {
+                System.out.println(" No se encontraron registros");
+                conexion.close();
+                return null;
+            } else {
+                do {
+                    c = new BeanCuento();
+
+                    c.setId_cuento(rs.getInt("id_cuento"));
+                    c.setContenido_cuento(rs.getString("contenido"));
+                    c.setNombre_cuento(rs.getString("nombre_cuento"));
+                    c.setGenero_cuento(rs.getString("genero"));
+                    c.setImagen_cuento(rs.getString("imagen"));
+                    c.setLink_cuento(rs.getString("link"));
+
+                    lista.add(c);
+                    cont++;
+                } while (rs.next() && cont < 3);
+                conexion.close();
+                return lista;
+            }
+        } catch (Exception e) {
+            System.out.println("Error en la base de datos.");
+            e.printStackTrace();
+            return null;
+        }
+    }
+
     public ArrayList<BeanCuento> lista() {
         ArrayList<BeanCuento> lista = new ArrayList<BeanCuento>();
         BeanCuento c;
@@ -107,7 +144,7 @@ public class Cuento {
                 conexion.close();
                 System.out.println("No se pudo borrar el cuento.");
                 return false;
-                
+
             }
         } catch (Exception e) {
             System.out.println("Error en la base de datos.");

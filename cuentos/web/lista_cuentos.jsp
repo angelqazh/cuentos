@@ -4,6 +4,9 @@
     Author     : Mauricio
 --%>
 
+<%@page import="Model.Beans.BeanCuento"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.Persistencia.Cuento"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page session="true" %>
 <!DOCTYPE html>
@@ -76,6 +79,13 @@
                 </div>
             </div>
         </nav>
+        <%
+            Cuento c = new Cuento();
+            ArrayList<BeanCuento> l = c.lista();
+            System.out.println(l.size());
+            for (int i = 0; i < l.size()/3; i++) {
+                System.out.println(l.get(i).getNombre_cuento());
+        %>
         <div class="container" style="margin-top: 10px;">
             <div class="row">
                 <div class="col-sm">
@@ -83,10 +93,10 @@
                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                              alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">Cuento title</h4>
-                            <p class="card-text">Participante: Nombre Participante.</p>
-                            <p class="card-text">Fecha: 10/10/2020.</p>
-                            <a class="btn btn-primary">Votar</a>
+                            <h4 class="card-title"><%= l.get(i).getNombre_cuento()%></h4>
+                            <p class="card-text">Genero: <%= l.get(i).getGenero_cuento()%></p>
+                            <p class="card-text"><a href="/<%= l.get(i).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                            <a onclick="like()" class="btn btn-primary">Votar</a>
                         </div>
                     </div>
                 </div>
@@ -95,10 +105,10 @@
                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                              alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">Cuento title</h4>
-                            <p class="card-text">Participante: Nombre Participante.</p>
-                            <p class="card-text">Fecha: 10/10/2020.</p>
-                            <a class="btn btn-primary">Votar</a>
+                            <h4 class="card-title"><%= l.get(i + 1).getNombre_cuento()%></h4>
+                            <p class="card-text">Genero: <%= l.get(i + 1).getGenero_cuento()%></p>
+                            <p class="card-text"><a href="/<%= l.get(i + 1).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                            <a onclick="like()" class="btn btn-primary">Votar</a>
                         </div>
                     </div>
                 </div>
@@ -107,16 +117,18 @@
                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                              alt="Card image cap">
                         <div class="card-body">
-                            <h4 class="card-title">Cuento title</h4>
-                            <p class="card-text">Participante: Nombre Participante.</p>
-                            <p class="card-text">Fecha: 10/10/2020.</p>
-                            <a class="btn btn-primary">Votar</a>
+                            <h4 class="card-title"><%= l.get(i + 2).getNombre_cuento()%></h4>
+                            <p class="card-text">Genero: <%= l.get(i + 2).getGenero_cuento()%></p>
+                            <p class="card-text"><a href="/<%= l.get(i + 2).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                            <a onclick="like()" class="btn btn-primary">Votar</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
+        <%
+            }
+        %>
         <script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

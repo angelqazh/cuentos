@@ -6,6 +6,9 @@
     Author     : angel
 --%>
 
+<%@page import="Model.Beans.BeanCuento"%>
+<%@page import="Model.Persistencia.Cuento"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -129,7 +132,13 @@
 
                     <!--Slides-->
                     <div class="carousel-inner" role="listbox">
-
+ <%
+                            Cuento c = new Cuento();
+                            ArrayList<BeanCuento> l = c.lista2();
+                            System.out.println(l.size());
+                            for (int i=0;i<3;i++) {
+                                System.out.println(l.get(i).getNombre_cuento());
+                        %>
                         <!--First slide-->
                         <div class="carousel-item active">
 
@@ -139,9 +148,9 @@
                                         <img class="card-img-top" src="https://www.pequeocio.com/wp-content/uploads/2009/05/el-patito-feo-1-550x388.jpg"
                                              alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
+                                            <h4 class="card-title"><%= l.get(i).getNombre_cuento()%></h4>
+                                            <p class="card-text">Genero: <%= l.get(i).getGenero_cuento()%></p>
+                                            <p class="card-text"><a href="/<%= l.get(i).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
                                             <a onclick="like()" class="btn btn-primary">Votar</a>
                                         </div>
                                     </div>
@@ -151,11 +160,11 @@
                                     <div class="card mb-2">
                                         <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
                                              alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
+                                          <div class="card-body">
+                                            <h4 class="card-title"><%= l.get(i+1).getNombre_cuento()%></h4>
+                                            <p class="card-text">Genero: <%= l.get(i+1).getGenero_cuento()%></p>
+                                            <p class="card-text"><a href="/<%= l.get(i+1).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                                            <a onclick="like()" class="btn btn-primary">Votar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -165,10 +174,10 @@
                                         <img class="card-img-top" src="https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG"
                                              alt="Card image cap">
                                         <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
+                                            <h4 class="card-title"><%= l.get(i+2).getNombre_cuento()%></h4>
+                                            <p class="card-text">Genero: <%= l.get(i+2).getGenero_cuento()%></p>
+                                            <p class="card-text"><a href="/<%= l.get(i+2).getLink_cuento()%>"> Descargarlo aqui !!!</a></p>
+                                            <a onclick="like()" class="btn btn-primary">Votar</a>
                                         </div>
                                     </div>
                                 </div>
@@ -176,102 +185,11 @@
 
                         </div>
                         <!--/.First slide-->
-
-                        <!--Second slide-->
-                        <div class="carousel-item">
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card mb-2 ">
-
-                                        <img class="card-img-top" src="https://www.pequeocio.com/wp-content/uploads/2009/05/el-patito-feo-1-550x388.jpg"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 clearfix d-none d-md-block">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 clearfix d-none d-md-block">
-                                    <div class="card mb-2">
-                                        <!--<div class="img-slide" style="background-image: url(https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG);"></div>-->
-                                        <img class="card-img-top" src="https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--/.Second slide-->
-
-                        <!--Third slide-->
-                        <div class="carousel-item">
-
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top" src="https://www.pequeocio.com/wp-content/uploads/2009/05/el-patito-feo-1-550x388.jpg"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 clearfix d-none d-md-block">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top" src="https://i.ytimg.com/vi/AMNACNvN8vc/maxresdefault.jpg"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-4 clearfix d-none d-md-block">
-                                    <div class="card mb-2">
-                                        <img class="card-img-top" src="https://www.elsotano.com/imagenes_grandes/9789463/978946360443.JPG"
-                                             alt="Card image cap">
-                                        <div class="card-body">
-                                            <h4 class="card-title">Cuento title</h4>
-                                            <p class="card-text">Participante: Nombre Participante.</p>
-                                            <p class="card-text">Fecha: 10/10/2020.</p>
-                                            <a class="btn btn-primary">Votar</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                        <!--/.Third slide-->
+   <%
+                    }
+                %>
+                
+               
 
                     </div>
                     <!--/.Slides-->
