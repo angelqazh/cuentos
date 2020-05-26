@@ -36,8 +36,7 @@
 
                     </ul>
                     <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                        <div scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="rounded"
-                             data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>
+                       
 
                         <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
                         <li class="dropdown order-1">
