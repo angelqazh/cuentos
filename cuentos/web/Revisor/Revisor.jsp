@@ -25,7 +25,7 @@
     <body>
         <h1 style="padding-top: 10vh;text-align: center">Lista de Cuentos</h1>
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
-            <div class="container">
+<!--            <div class="container">
                 <a class="navbar-brand" href="../index.jsp">Inicio</a>
                 <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                 </button>
@@ -34,14 +34,14 @@
                         <li class="nav-item"><a href="../lista_cuentos.jsp" class="nav-link">Cuentos</a></li>
                         <li class="nav-item"><a href="#" class="nav-link">Acerca</a></li>
 
-                    </ul>
+                    </ul>-->
                     <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-                        <div scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="rounded"
-                             data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>
+<!--                        <div scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button" data-size="large" data-button-type="login_with" data-layout="rounded"
+                             data-auto-logout-link="true" data-use-continue-as="false" data-width=""></div>-->
 
                         <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
                         <li class="dropdown order-1">
-                            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-success dropdown-toggle">Login <span class="caret"></span></button>
+                            <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-danger dropdown-toggle">Log out <span class="caret"></span></button>
                             <ul class="dropdown-menu dropdown-menu-right mt-2">
                                 <li class="px-3 py-2">
                                     <% // out.print(session.getAttribute("usuario"));

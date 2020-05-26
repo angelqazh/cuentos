@@ -26,7 +26,7 @@
                         <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
                             <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
                             <li class="dropdown order-1">
-                                <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-success dropdown-toggle">Login <span class="caret"></span></button>
+                                <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn  btn-danger dropdown-toggle">Log out <span class="caret"></span></button>
                                 <ul class="dropdown-menu dropdown-menu-right mt-2">
                                     <li class="px-3 py-2">
                                         <% // out.print(session.getAttribute("usuario"));
