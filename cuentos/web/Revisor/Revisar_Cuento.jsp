@@ -17,7 +17,7 @@
     </head>
     <body>
         <h1>Cuento</h1>     
-        <input  type="hidden" id="idfile" value="<%= request.getAttribute("cuento") %>">
+        <input  type="hidden" id="idfile" value="<%= request.getAttribute("cuento")%>">
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation">
             <div class="container">
                 <a class="navbar-brand" href="<%= request.getContextPath()%>/index.jsp">Inicio</a>
@@ -73,8 +73,10 @@
                 </div>
             </div>
         </nav>
-                                    <div style="position: absolute;right: 70px">
+        <div style="position: absolute;right: 70px">
             <form action="<%= request.getContextPath()%>/ServletAprobar_Cuento" method="POST">
+                <input  type="hidden" name="cuentoID" value="<%= request.getAttribute("cuentoID")%>">
+
                 <input type="submit" name="aprobar" value="aprobar">
                 <input type="submit" name="aprobar" value="eliminar">
             </form>
