@@ -91,14 +91,14 @@ public class Cuento {
         }
     }
 
-    public boolean borrar(BeanCuento c) {
+    public boolean borrar(int c) {
         try {
             ConectaBD conectaBD = new ConectaBD();
             conexion = conectaBD.getConexion();
             stm = conexion.createStatement();
             resultUpdate = stm.executeUpdate(
                     "DELETE FROM cuento WHERE(id_cuento = "
-                    + c.getId_cuento() + ");"
+                    + c + ");"
             );
             if (resultUpdate != 0) {
                 conexion.close();
@@ -115,13 +115,13 @@ public class Cuento {
         }
     }
 
-    public boolean aprobar(BeanCuento c) {
+    public boolean aprobar(int c) {
         try {
             ConectaBD conectaBD = new ConectaBD();
             conexion = conectaBD.getConexion();
             stm = conexion.createStatement();
             resultUpdate = stm.executeUpdate("UPDATE cuento SET aprobado = 'true' WHERE id_cuento = "
-                    + c.getId_cuento() + ";");
+                    + c + ";");
             if (resultUpdate != 0) {
                 conexion.close();
                 return true;

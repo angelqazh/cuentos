@@ -31,7 +31,8 @@ public class ServletAprobar_Cuento extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        BeanCuento c = (BeanCuento) request.getAttribute("cuento");
+        int c= Integer.parseInt(request.getParameter("cuentoID"));
+        System.out.println(c);
         Cuento bd = new Cuento();
 
         if (request.getParameter("aprobar").equals("aprobar")) {

@@ -35,6 +35,7 @@ public class ServletRevisor extends HttpServlet {
         Cuento cbd = new Cuento();
         BeanCuento c = cbd.buscar(Integer.parseInt(request.getParameter("cuento")));
         request.setAttribute("cuento", c.getLink_cuento());
+        request.setAttribute("cuentoID", c.getId_cuento());
 
         System.out.println(request.getContextPath());
         RequestDispatcher dispatcher
