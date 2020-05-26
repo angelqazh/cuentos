@@ -107,6 +107,7 @@ public class Cuento {
                 conexion.close();
                 System.out.println("No se pudo borrar el cuento.");
                 return false;
+                
             }
         } catch (Exception e) {
             System.out.println("Error en la base de datos.");

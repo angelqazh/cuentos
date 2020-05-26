@@ -80,40 +80,43 @@
             </div>
         </nav>
 
-        <form action="../ServletRevisor" method="POST">
-            <table class="table table-striped">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">Id</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Genero</th>
-                        <th scope="col">Link</th>
-                        <th scope="col">Revisar</th>
-                    </tr>
-                    </tr>
-                </thead>
-                <tbody>
-                    <%
-                        Cuento c = new Cuento();
-                        ArrayList<BeanCuento> l = c.lista();
-                        for (BeanCuento cuento : l) {
-                            
-                    %>
-                <input type="hidden"  name="cuento" value="<%= cuento.getId_cuento()%>"></input>
-                    <tr>
-                        <td><%= cuento.getId_cuento()%></td>                              
-                        <td><%= cuento.getNombre_cuento()%></td>                              
-                        <td><%= cuento.getGenero_cuento()%></td>                              
-                        <td><%= cuento.getLink_cuento()%></td>                              
-                        <td><input type="submit" value="revisar"></td>                              
-                    </tr>
-                    <%
-                        }
-                    %>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Genero</th>
+                    <th scope="col">Link</th>
+                    <th scope="col">Revisar</th>
+                </tr>
+                </tr>
+            </thead>
+            <tbody>
+                <%
+                    Cuento c = new Cuento();
+                    ArrayList<BeanCuento> l = c.lista();
+                    for (BeanCuento cuento : l) {
 
-                </tbody>
-            </table>
-        </form>
+                %>
+
+                <tr>
+                    <td><%= cuento.getId_cuento()%></td>                              
+                    <td><%= cuento.getNombre_cuento()%></td>                              
+                    <td><%= cuento.getGenero_cuento()%></td>                              
+                    <td><a href="../<%= cuento.getLink_cuento()%>"><%= cuento.getLink_cuento()%></a></td>     
+                    <td>        
+                        <form action="../ServletRevisor" method="POST">
+                            <input type="hidden"  name="cuento" value="<%= cuento.getId_cuento()%>">
+                            <input type="submit" value="revisar">       
+                        </form>
+                    </td>                              
+                </tr>
+                <%
+                    }
+                %>
+
+            </tbody>
+        </table>
         <script src="../bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
         <script src="../bootstrap/js/popper.min.js" type="text/javascript"></script>
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
