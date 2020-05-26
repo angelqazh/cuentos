@@ -114,8 +114,8 @@
                 </tbody>
             </table>
         </form>
-        <script src="bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/popper.min.js" type="text/javascript"></script>
-        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/jquery-3.2.1.slim.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/popper.min.js" type="text/javascript"></script>
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     </body>
 </html>
